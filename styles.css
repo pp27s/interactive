@@ -1,0 +1,109 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes rainbow {
+    0% { color: red; }
+    14% { color: orange; }
+    28% { color: yellow; }
+    42% { color: green; }
+    57% { color: blue; }
+    71% { color: indigo; }
+    85% { color: violet; }
+    100% { color: red; }
+}
+
+@keyframes rainbowBg {
+    0% { background-color: red; }
+    14% { background-color: orange; }
+    28% { background-color: yellow; }
+    42% { background-color: green; }
+    57% { background-color: blue; }
+    71% { background-color: indigo; }
+    85% { background-color: violet; }
+    100% { background-color: red; }
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s;
+}
+
+h1 {
+    color: #ff6f61;
+    margin-bottom: 20px;
+    animation: rainbow 5s linear infinite;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 16px;
+    background: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    animation: rainbowBg 5s linear infinite;
+}
+
+.btn:hover {
+    background: #ff4b3a;
+}
+
+.input {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    border: 2px solid #ff6f61;
+    border-radius: 5px;
+    animation: fadeIn 2s;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    animation: fadeIn 2s;
+    opacity: 0;
+}
+
+.result.show {
+    animation: fadeIn 2s forwards, rainbow 5s linear infinite;
+}
+
+.surprise {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff6f61;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    display: none;
+    animation: slideIn 1s, rainbowBg 5s linear infinite;
+}
